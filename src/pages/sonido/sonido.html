@@ -1,0 +1,26 @@
+<!--
+  Generated template for the SonidoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Sonido de Animales</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+    <ion-list>
+        <ion-item  *ngFor="let animal of animales; let i = index">
+          <ion-avatar (click)="reproducir(animal)">
+            <img  *ngIf="!animal.reproduciendo" name="play" [src]="animal.imagen">
+            <img  *ngIf="animal.reproduciendo" name="pause" [src]="animal.imagen">
+            <h2>{{animal.nombre}}</h2>
+            </ion-avatar>
+        </ion-item>  
+      </ion-list>
+</ion-content>
